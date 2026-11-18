@@ -1,0 +1,1464 @@
+/* ===================================================================
+   NOVA RECRUITMENT PVT. LTD. - CORPORATE STYLESHEET
+   Brand Colors:
+     - Navy Blue: #09265B
+     - Royal Blue: #123D85
+     - Accent Gold: #D9A52E (Hover: #C28F20, Tint: #FBF4E4)
+     - White: #FFFFFF
+     - Light Grey: #F5F7FA
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@500;600;700;800;900&display=swap');
+
+:root {
+  --primary-navy: #09265B;
+  --secondary-royal: #123D85;
+  --accent-gold: #D9A52E;
+  --accent-gold-hover: #c28f20;
+  --accent-gold-light: #FBF4E4;
+  --accent-gold-glow: rgba(217, 165, 46, 0.28);
+  --dark-text: #1E293B;
+  --muted-text: #64748B;
+  --light-bg: #F5F7FA;
+  --card-bg: #FFFFFF;
+  --border-color: #E2E8F0;
+  --navy-gradient: linear-gradient(135deg, #09265B 0%, #123D85 100%);
+  --gold-gradient: linear-gradient(135deg, #FDE68A 0%, #D9A52E 50%, #B47C10 100%);
+  --hero-gradient: linear-gradient(180deg, rgba(9, 38, 91, 0.95) 0%, rgba(18, 61, 133, 0.88) 100%);
+  --shadow-sm: 0 2px 4px rgba(9, 38, 91, 0.05);
+  --shadow-md: 0 6px 18px rgba(9, 38, 91, 0.08);
+  --shadow-lg: 0 12px 32px rgba(9, 38, 91, 0.12);
+  --shadow-gold: 0 8px 24px rgba(217, 165, 46, 0.25);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--dark-text);
+  background-color: #FFFFFF;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  color: var(--primary-navy);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--secondary-royal);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-gold-hover);
+}
+
+/* Eyebrow / Section Subtitles */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  background: var(--accent-gold-light);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(217, 165, 46, 0.25);
+}
+
+.eyebrow-dark {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FDE68A;
+  border-color: rgba(217, 165, 46, 0.4);
+}
+
+.section-title {
+  font-size: 2.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.section-title span {
+  color: var(--accent-gold);
+}
+
+.section-lead {
+  font-size: 1.1rem;
+  color: var(--muted-text);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Custom Buttons */
+.btn-primary-nova {
+  background: var(--navy-gradient);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 14px rgba(9, 38, 91, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.btn-primary-nova:hover {
+  background: linear-gradient(135deg, #123D85 0%, #09265B 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(9, 38, 91, 0.3);
+  color: #FFFFFF !important;
+}
+
+.btn-gold-nova {
+  background: var(--gold-gradient);
+  color: var(--primary-navy) !important;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: var(--shadow-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.btn-gold-nova:hover {
+  background: linear-gradient(135deg, #D9A52E 0%, #B47C10 100%);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(217, 165, 46, 0.4);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--accent-gold) !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 11px 26px;
+  border-radius: 50px;
+  border: 2px solid var(--accent-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.btn-outline-gold:hover {
+  background: var(--accent-gold);
+  color: var(--primary-navy) !important;
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 11px 26px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline-white:hover {
+  background: #FFFFFF;
+  color: var(--primary-navy) !important;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* ===================================================================
+   TOP HEADER BAR
+   =================================================================== */
+.top-header-bar {
+  background-color: #061A3E;
+  color: #E2E8F0;
+  font-size: 0.84rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-header-bar a {
+  color: #E2E8F0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.top-header-bar a:hover {
+  color: var(--accent-gold);
+}
+
+.top-header-bar i {
+  color: var(--accent-gold);
+}
+
+.top-divider {
+  color: rgba(255, 255, 255, 0.2);
+  margin: 0 8px;
+}
+
+/* ===================================================================
+   STICKY NAVBAR
+   =================================================================== */
+.navbar-nova {
+  background: #FFFFFF;
+  padding: 14px 0;
+  box-shadow: 0 4px 20px rgba(9, 38, 91, 0.06);
+  transition: var(--transition);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar-nova.scrolled {
+  padding: 10px 0;
+  box-shadow: 0 8px 30px rgba(9, 38, 91, 0.12);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+}
+
+.brand-logo-img {
+  height: 48px;
+  width: auto;
+  transition: var(--transition);
+}
+
+.navbar-nova .nav-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.96rem;
+  color: var(--primary-navy);
+  padding: 8px 16px !important;
+  position: relative;
+  transition: var(--transition);
+}
+
+.navbar-nova .nav-link:hover,
+.navbar-nova .nav-link.active {
+  color: var(--secondary-royal);
+}
+
+.navbar-nova .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 2.5px;
+  background: var(--accent-gold);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+
+.navbar-nova .nav-link:hover::after,
+.navbar-nova .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-cta-btn {
+  margin-left: 12px;
+}
+
+/* ===================================================================
+   HERO BANNER
+   =================================================================== */
+.hero-section {
+  position: relative;
+  background-color: var(--primary-navy);
+  color: #FFFFFF;
+  padding: 90px 0 100px;
+  overflow: hidden;
+  background-image: 
+    radial-gradient(circle at 85% 30%, rgba(217, 165, 46, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(18, 61, 133, 0.6) 0%, transparent 50%),
+    linear-gradient(135deg, #09265B 0%, #123D85 100%);
+}
+
+.hero-overlay-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.hero-heading {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 22px;
+  letter-spacing: -1px;
+}
+
+.hero-heading span.gold-text {
+  color: var(--accent-gold);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-heading span.gold-text::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(217, 165, 46, 0.35);
+  border-radius: 3px;
+  z-index: -1;
+}
+
+.hero-desc {
+  font-size: 1.2rem;
+  color: #CBD5E1;
+  line-height: 1.7;
+  margin-bottom: 34px;
+  max-width: 580px;
+}
+
+.hero-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.hero-stats-row {
+  display: flex;
+  gap: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-stat-item h3 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  margin-bottom: 2px;
+}
+
+.hero-stat-item p {
+  font-size: 0.85rem;
+  color: #94A3B8;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-graphic-wrap {
+  position: relative;
+  text-align: center;
+}
+
+.hero-graphic-wrap img,
+.hero-graphic-wrap svg {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+  border-radius: var(--radius-lg);
+}
+
+/* ===================================================================
+   SECTION: ABOUT NOVA
+   =================================================================== */
+.section-about-nova {
+  padding: 95px 0;
+  background-color: #FFFFFF;
+}
+
+.about-feature-box {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 22px;
+  padding: 16px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+}
+
+.about-feature-box:hover {
+  border-color: var(--accent-gold);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-icon-pill {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  background: var(--accent-gold-light);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+}
+
+.about-feature-content h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--primary-navy);
+}
+
+.about-feature-content p {
+  font-size: 0.92rem;
+  color: var(--muted-text);
+  margin-bottom: 0;
+}
+
+/* ===================================================================
+   SECTION: ABOUT NEPAL
+   =================================================================== */
+.section-about-nepal {
+  padding: 95px 0;
+  background-color: var(--light-bg);
+  position: relative;
+}
+
+.nepal-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.nepal-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.nepal-highlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(220, 20, 60, 0.08);
+  color: #DC143C;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: 50px;
+  margin-bottom: 14px;
+}
+
+.nepal-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.nepal-stat-box {
+  background: var(--light-bg);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent-gold);
+}
+
+.nepal-stat-box h6 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--primary-navy);
+}
+
+.nepal-stat-box p {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  margin-bottom: 0;
+}
+
+/* ===================================================================
+   SECTION: WHY CHOOSE NEPALESE WORKFORCE
+   =================================================================== */
+.section-why-nepalese {
+  padding: 95px 0;
+  background-color: #FFFFFF;
+}
+
+.feature-card-nova {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 34px 26px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card-nova::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: transparent;
+  transition: var(--transition);
+}
+
+.feature-card-nova:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(217, 165, 46, 0.4);
+}
+
+.feature-card-nova:hover::before {
+  background: var(--accent-gold);
+}
+
+.card-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: var(--accent-gold-light);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 22px;
+  transition: var(--transition);
+}
+
+.feature-card-nova:hover .card-icon-wrap {
+  background: var(--navy-gradient);
+  color: #FFFFFF;
+}
+
+.feature-card-nova h4 {
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.feature-card-nova p {
+  font-size: 0.93rem;
+  color: var(--muted-text);
+  margin-bottom: 0;
+}
+
+/* ===================================================================
+   SECTION: WHY CHOOSE NOVA
+   =================================================================== */
+.section-why-nova {
+  padding: 95px 0;
+  background-color: var(--light-bg);
+}
+
+.nova-advantage-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  height: 100%;
+  transition: var(--transition);
+}
+
+.nova-advantage-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-gold);
+}
+
+.advantage-number {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+/* ===================================================================
+   SECTION: OUR SERVICES (6 CARDS)
+   =================================================================== */
+.section-services {
+  padding: 95px 0;
+  background-color: #FFFFFF;
+}
+
+.service-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 34px 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--secondary-royal);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(9, 38, 91, 0.08) 0%, rgba(18, 61, 133, 0.08) 100%);
+  color: var(--secondary-royal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  margin-bottom: 22px;
+  transition: var(--transition);
+}
+
+.service-card:hover .service-icon-box {
+  background: var(--navy-gradient);
+  color: var(--accent-gold);
+  transform: scale(1.05);
+}
+
+.service-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--primary-navy);
+}
+
+.service-card p {
+  font-size: 0.94rem;
+  color: var(--muted-text);
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.service-card .learn-more-link {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--secondary-royal);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-card:hover .learn-more-link {
+  color: var(--accent-gold);
+}
+
+/* ===================================================================
+   SECTION: RECRUITMENT PROCESS (5 STEPS)
+   =================================================================== */
+.section-process {
+  padding: 95px 0;
+  background-color: var(--light-bg);
+}
+
+.process-steps-container {
+  position: relative;
+  margin-top: 40px;
+}
+
+.process-step-item {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.process-badge {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: 4px solid #FFFFFF;
+  box-shadow: 0 6px 18px rgba(9, 38, 91, 0.18);
+  position: relative;
+  transition: var(--transition);
+}
+
+.process-step-item:hover .process-badge {
+  background: var(--secondary-royal);
+  border-color: var(--accent-gold);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold);
+}
+
+.process-step-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--accent-gold);
+  line-height: 1;
+}
+
+.process-step-item h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--primary-navy);
+}
+
+.process-step-item p {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  margin-bottom: 0;
+}
+
+/* Line connector for large screens */
+@media (min-width: 992px) {
+  .process-steps-row {
+    position: relative;
+  }
+  .process-steps-row::before {
+    content: '';
+    position: absolute;
+    top: 58px;
+    left: 8%;
+    right: 8%;
+    height: 3px;
+    background: #CBD5E1;
+    z-index: 1;
+  }
+  .process-steps-row::after {
+    content: '';
+    position: absolute;
+    top: 58px;
+    left: 8%;
+    width: 60%;
+    height: 3px;
+    background: var(--accent-gold);
+    z-index: 1;
+  }
+}
+
+/* ===================================================================
+   SECTION: INTERNATIONAL DESTINATIONS
+   =================================================================== */
+.section-destinations {
+  padding: 95px 0;
+  background-color: #FFFFFF;
+}
+
+.destination-disclaimer {
+  background: #FFFBEB;
+  border: 1px solid #FCD34D;
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  font-size: 0.88rem;
+  color: #92400E;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.destination-disclaimer i {
+  font-size: 1.25rem;
+  color: #D97706;
+}
+
+.nav-pills-destinations {
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.nav-pills-destinations .nav-link {
+  border-radius: 50px;
+  padding: 10px 24px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--primary-navy);
+  background: var(--light-bg);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.nav-pills-destinations .nav-link.active,
+.nav-pills-destinations .nav-link:hover {
+  background: var(--navy-gradient);
+  color: #FFFFFF;
+  border-color: var(--primary-navy);
+}
+
+.destination-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: var(--transition);
+}
+
+.destination-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.country-flag-box {
+  width: 56px;
+  height: 38px;
+  min-width: 56px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.country-flag-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.destination-info h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: var(--primary-navy);
+}
+
+.destination-region-badge {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===================================================================
+   SECTION: FAQ ACCORDION
+   =================================================================== */
+.section-faq {
+  padding: 95px 0;
+  background-color: var(--light-bg);
+}
+
+.accordion-nova .accordion-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md) !important;
+  margin-bottom: 14px;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.accordion-nova .accordion-item:hover {
+  border-color: rgba(217, 165, 46, 0.4);
+}
+
+.accordion-nova .accordion-button {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: var(--primary-navy);
+  padding: 20px 24px;
+  background: #FFFFFF;
+  box-shadow: none;
+}
+
+.accordion-nova .accordion-button:not(.collapsed) {
+  background: rgba(9, 38, 91, 0.03);
+  color: var(--secondary-royal);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.accordion-nova .accordion-body {
+  padding: 22px 24px;
+  font-size: 0.95rem;
+  color: var(--muted-text);
+  line-height: 1.7;
+}
+
+/* ===================================================================
+   SECTION: TESTIMONIALS
+   =================================================================== */
+.section-testimonials {
+  padding: 95px 0;
+  background-color: #FFFFFF;
+}
+
+.testimonial-card {
+  background: var(--light-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 34px 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-stars {
+  color: var(--accent-gold);
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.testimonial-quote {
+  font-size: 0.98rem;
+  color: var(--dark-text);
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--navy-gradient);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  border: 2px solid var(--accent-gold);
+}
+
+.testimonial-info h6 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: var(--primary-navy);
+}
+
+.testimonial-info p {
+  font-size: 0.82rem;
+  color: var(--muted-text);
+  margin-bottom: 0;
+}
+
+.placeholder-notice {
+  font-size: 0.8rem;
+  color: #94A3B8;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* ===================================================================
+   SECTION: EMPLOYER PARTNERSHIP CTA
+   =================================================================== */
+.section-employer-cta {
+  padding: 90px 0;
+  background: var(--navy-gradient);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.employer-cta-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  padding: 60px 45px;
+  backdrop-filter: blur(8px);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.employer-cta-box h2 {
+  color: #FFFFFF;
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.employer-cta-box p {
+  font-size: 1.15rem;
+  color: #CBD5E1;
+  max-width: 650px;
+  margin: 0 auto 34px;
+}
+
+/* ===================================================================
+   SECTION: JOB OPPORTUNITIES
+   =================================================================== */
+.section-jobs {
+  padding: 95px 0;
+  background-color: var(--light-bg);
+}
+
+.job-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 26px;
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--secondary-royal);
+}
+
+.job-category-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--secondary-royal);
+  background: rgba(18, 61, 133, 0.08);
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+.job-title {
+  font-size: 1.22rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--primary-navy);
+}
+
+.job-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.88rem;
+  color: var(--muted-text);
+  margin-bottom: 14px;
+}
+
+.job-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.job-meta-item i {
+  color: var(--accent-gold);
+}
+
+.job-description-text {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.job-card-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.job-disclaimer-box {
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  font-size: 0.86rem;
+  color: #1E40AF;
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* ===================================================================
+   SECTION: CONTACT US
+   =================================================================== */
+.section-contact {
+  padding: 95px 0;
+  background-color: #FFFFFF;
+}
+
+.contact-card-info {
+  background: var(--navy-gradient);
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 42px 34px;
+  height: 100%;
+}
+
+.contact-card-info h3 {
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.contact-card-info p {
+  color: #CBD5E1;
+  font-size: 0.95rem;
+}
+
+.contact-detail-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.contact-icon-pill {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: 1px solid rgba(217, 165, 46, 0.3);
+}
+
+.contact-detail-text h6 {
+  color: var(--accent-gold);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.contact-detail-text p,
+.contact-detail-text a {
+  color: #FFFFFF;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.contact-detail-text a:hover {
+  color: var(--accent-gold);
+}
+
+.contact-form-wrap {
+  background: var(--light-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 40px 34px;
+}
+
+.contact-form-wrap .form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-navy);
+  margin-bottom: 6px;
+}
+
+.contact-form-wrap .form-control,
+.contact-form-wrap .form-select {
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.contact-form-wrap .form-control:focus,
+.contact-form-wrap .form-select:focus {
+  border-color: var(--secondary-royal);
+  box-shadow: 0 0 0 3px rgba(18, 61, 133, 0.12);
+}
+
+.map-container {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  height: 320px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===================================================================
+   FOOTER
+   =================================================================== */
+.footer-nova {
+  background-color: #061838;
+  color: #94A3B8;
+  padding: 80px 0 30px;
+  font-size: 0.93rem;
+  border-top: 3px solid var(--accent-gold);
+}
+
+.footer-brand-logo {
+  height: 48px;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+.footer-nova h5 {
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-nova h5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2.5px;
+  background: var(--accent-gold);
+  border-radius: 2px;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-list li {
+  margin-bottom: 11px;
+}
+
+.footer-links-list a {
+  color: #94A3B8;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links-list a:hover {
+  color: var(--accent-gold);
+  transform: translateX(4px);
+}
+
+.footer-contact-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+}
+
+.footer-contact-item i {
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  margin-top: 3px;
+}
+
+.footer-contact-item a {
+  color: #CBD5E1;
+}
+
+.footer-contact-item a:hover {
+  color: var(--accent-gold);
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ===================================================================
+   FLOATING WHATSAPP & BACK TO TOP BUTTONS
+   =================================================================== */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+  z-index: 1040;
+  transition: var(--transition);
+  animation: pulseWhatsapp 2.2s infinite;
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.1);
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes pulseWhatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 95px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-navy);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--accent-gold);
+  z-index: 1039;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
+  transform: translateY(-3px);
+}
+
+/* ===================================================================
+   PAGE HERO FOR SUB-PAGES (About, Services, Jobs, Employers, Contact)
+   =================================================================== */
+.page-hero {
+  background: var(--navy-gradient);
+  color: #FFFFFF;
+  padding: 70px 0 65px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.page-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.page-hero p {
+  font-size: 1.15rem;
+  color: #CBD5E1;
+  max-width: 650px;
+  margin-bottom: 0;
+}
+
+.breadcrumb-nova {
+  margin-top: 18px;
+  display: inline-flex;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.breadcrumb-nova a {
+  color: #94A3B8;
+}
+
+.breadcrumb-nova a:hover {
+  color: var(--accent-gold);
+}
+
+.breadcrumb-nova span {
+  color: var(--accent-gold);
+}
+

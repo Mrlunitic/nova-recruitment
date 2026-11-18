@@ -1,0 +1,186 @@
+/* ===================================================================
+   NOVA RECRUITMENT PVT. LTD. - RESPONSIVE STYLESHEET
+   Mobile, Tablet, and Desktop Breakpoint Optimizations
+   =================================================================== */
+
+/* Large Tablets & Small Desktops (max-width: 991.98px) */
+@media (max-width: 991.98px) {
+  .hero-heading {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section {
+    padding: 60px 0 70px;
+    text-align: center;
+  }
+  
+  .hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-action-buttons {
+    justify-content: center;
+  }
+  
+  .hero-stats-row {
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .hero-graphic-wrap {
+    margin-top: 40px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .navbar-nova .navbar-collapse {
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    margin-top: 15px;
+  }
+  
+  .nav-cta-btn {
+    margin-left: 0;
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .navbar-nova .nav-link::after {
+    display: none;
+  }
+  
+  .navbar-nova .nav-link {
+    padding: 10px 0 !important;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .process-steps-row {
+    position: relative;
+  }
+
+  .process-steps-row::before,
+  .process-steps-row::after {
+    display: none;
+  }
+
+  .process-step-item {
+    margin-bottom: 25px;
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    padding: 24px 18px;
+  }
+
+  .nepal-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile Devices (max-width: 767.98px) */
+@media (max-width: 767.98px) {
+  .top-header-bar {
+    display: none; /* Hide top bar on compact mobile screens to keep view uncluttered */
+  }
+
+  .hero-heading {
+    font-size: 2.1rem;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-about-nova,
+  .section-about-nepal,
+  .section-why-nepalese,
+  .section-why-nova,
+  .section-services,
+  .section-process,
+  .section-destinations,
+  .section-faq,
+  .section-testimonials,
+  .section-jobs,
+  .section-contact {
+    padding: 60px 0;
+  }
+
+  .hero-action-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-action-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-stats-row {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .employer-cta-box {
+    padding: 40px 20px;
+  }
+
+  .employer-cta-box h2 {
+    font-size: 1.9rem;
+  }
+
+  .contact-card-info,
+  .contact-form-wrap {
+    padding: 28px 20px;
+  }
+
+  .floating-whatsapp-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    font-size: 28px;
+  }
+
+  .back-to-top-btn {
+    bottom: 82px;
+    right: 22px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .page-hero h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* Small Smart Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .brand-logo-img {
+    height: 40px;
+  }
+
+  .hero-heading {
+    font-size: 1.85rem;
+  }
+
+  .btn-primary-nova,
+  .btn-gold-nova,
+  .btn-outline-gold,
+  .btn-outline-white {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
