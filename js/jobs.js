@@ -1,12 +1,6 @@
 /**
- * NOVA RECRUITMENT PVT. LTD. - SAMPLE JOBS DATA & CONTROLLER
- * Address: Budhanilakantha-12, Kathmandu, Nepal
- * Phone / WhatsApp: +977 9851122545
- * 
- * NOTE: As per ethical recruitment guidelines and user instructions, 
- * these vacancies are illustrative samples representative of typical demand 
- * categories handled by NOVA Recruitment. Active vacancies are subject to verified 
- * Government of Nepal Department of Foreign Employment approval.
+ * NOVA RECRUITMENT - VACANCIES DATA & CONTROLLER
+ * Client-side vacancy listings, search, and filter management.
  */
 
 const NOVA_JOBS = [
