@@ -28,12 +28,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 3. Highlight Active Navigation Item based on URL
-  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  // 3. Highlight Active Navigation Item based on URL (cleanUrls-compatible)
+  const normalizePageName = (path) => {
+    if (!path) return "index";
+    const segment = path.split("/").filter(Boolean).pop() || "index";
+    return segment.replace(/\.html$/i, "");
+  };
+
+  const currentPage = normalizePageName(window.location.pathname);
   const navLinks = document.querySelectorAll(".navbar-nova .nav-link");
   navLinks.forEach(link => {
     const href = link.getAttribute("href");
-    if (href === currentPath || (currentPath === "" && href === "index.html")) {
+    const linkPage = normalizePageName(href);
+    if (linkPage === currentPage) {
       link.classList.add("active");
     } else {
       link.classList.remove("active");
