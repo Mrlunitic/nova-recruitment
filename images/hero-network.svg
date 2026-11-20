@@ -102,6 +102,6 @@
     <circle cx="34" cy="37" r="18" fill="url(#goldG)" fill-opacity="0.2" />
     <text x="34" y="42" fill="#D9A52E" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" text-anchor="middle">&#127757;</text>
     <text x="62" y="32" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15">15+ Destinations</text>
-    <text x="62" y="50" fill="#CBD5E1" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="12">Middle East &bull; Asia &bull; Europe</text>
+    <text x="62" y="50" fill="#CBD5E1" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="12">Middle East &#8226; Asia &#8226; Europe</text>
   </g>
 </svg>
