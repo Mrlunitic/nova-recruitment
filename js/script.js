@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <a href="${waGreece}" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
                 <i class="bi bi-whatsapp"></i> Send to Greece Desk
               </a>
-              <a href="mailto:info@novarecruitment.com.np?subject=Manpower%20Demand%20Inquiry%20-%20${encodeURIComponent(company)}" class="btn btn-sm btn-outline-dark">
+              <a href="mailto:nova.nepaloffice@gmail.com?subject=Manpower%20Demand%20Inquiry%20-%20${encodeURIComponent(company)}" class="btn btn-sm btn-outline-dark">
                 <i class="bi bi-envelope"></i> Email Us
               </a>
             </div>
