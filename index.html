@@ -31,21 +31,22 @@
   <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/motion.css">
 </head>
 <body>
 
   <!-- Top Header Contact Strip -->
   <header class="top-header-bar">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center flex-wrap">
-        <div class="d-flex align-items-center gap-2 gap-md-3">
+    <div class="container-fluid px-lg-4 px-3">
+      <div class="d-flex justify-content-between align-items-center flex-nowrap">
+        <div class="d-flex align-items-center gap-2 gap-lg-3 text-nowrap overflow-hidden">
           <span><i class="bi bi-geo-alt-fill"></i> Budhanilakantha-12, Kathmandu</span>
-          <span class="d-none d-md-inline top-divider">|</span>
+          <span class="d-none d-sm-inline top-divider">|</span>
           <a href="tel:+9779851122545" class="d-none d-sm-inline"><i class="bi bi-telephone-fill"></i> +977 9851122545 / 9713722066</a>
-          <span class="d-none d-md-inline top-divider">|</span>
+          <span class="d-none d-lg-inline top-divider">|</span>
           <a href="mailto:nova.nepaloffice@gmail.com" class="d-none d-lg-inline"><i class="bi bi-envelope-fill"></i> nova.nepaloffice@gmail.com</a>
         </div>
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-2 text-nowrap flex-shrink-0">
           <span class="text-white-50 d-none d-xl-inline"><span class="badge bg-light text-dark px-1 py-0 me-1">Qatar</span> <a href="https://wa.me/97477059127" target="_blank" rel="noopener" class="text-white text-decoration-none"><i class="bi bi-whatsapp text-success"></i> +974 7705 9127</a></span>
           <span class="d-none d-xl-inline top-divider">|</span>
           <span class="text-white-50 d-none d-xl-inline"><span class="badge bg-light text-dark px-1 py-0 me-1">Greece</span> <a href="https://wa.me/306998664901" target="_blank" rel="noopener" class="text-white text-decoration-none"><i class="bi bi-whatsapp text-success"></i> +30 699 866 4901</a></span>
@@ -108,7 +109,7 @@
       <div class="row align-items-center">
         <div class="col-lg-7">
           <span class="eyebrow eyebrow-dark">
-            <i class="bi bi-globe2"></i> Government Approved Recruitment Agency &bull; Nepal
+            <i class="bi bi-globe2"></i> Global Talent &amp; Workforce Solutions &bull; Nepal
           </span>
 
           <h1 class="hero-heading">
@@ -613,77 +614,187 @@
   </section>
 
   <!-- ===================================================================
-       SECTION 7: RECRUITMENT PROCESS (5 STEPS)
+       SECTION 7: RECRUITMENT PROCESS (XOOM-STYLE ZIGZAG WORKFLOW)
        =================================================================== -->
-  <section class="section-process" id="process">
-    <div class="container">
-      <div class="text-center mb-5">
-        <span class="eyebrow"><i class="bi bi-diagram-3-fill"></i> Streamlined Workflow</span>
-        <h2 class="section-title">Our 5-Step <span>Recruitment Process</span></h2>
-        <p class="section-lead">
+  <section class="section-process xoom-workflow-section" id="process">
+    <div class="xoom-workflow-bg-glow" aria-hidden="true"></div>
+    <div class="container position-relative">
+      <!-- Section Header -->
+      <div class="text-center mb-5 xoom-header-wrap">
+        <span class="eyebrow xoom-eyebrow"><i class="bi bi-diagram-3-fill"></i> Streamlined Workflow</span>
+        <h2 class="section-title text-white">Our 5-Step <span class="text-navy-gold">Recruitment Process</span></h2>
+        <p class="section-lead text-navy-muted">
           A structured, fully auditable pathway guaranteeing legal compliance, timely processing, and high candidate retention.
         </p>
       </div>
 
-      <div class="process-steps-container">
-        <div class="row process-steps-row">
-          <!-- Step 1 -->
-          <div class="col-lg col-md-6">
-            <div class="process-step-item">
-              <div class="process-badge">
-                <span class="process-step-num">01</span>
-                <i class="bi bi-file-earmark-check fs-6 text-gold"></i>
+      <!-- Xoom-style Zigzag Workflow Container -->
+      <div class="xoom-workflow-wrapper" id="xoomWorkflowWrapper">
+        <!-- SVG Connecting Track with Gold/Navy Glow -->
+        <svg class="xoom-zigzag-svg" id="xoomZigzagSvg" aria-hidden="true">
+          <defs>
+            <filter id="xoomNeonGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur1" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur2" />
+              <feMerge>
+                <feMergeNode in="blur2" />
+                <feMergeNode in="blur1" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <linearGradient id="xoomNavyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#D9A52E" />
+              <stop offset="50%" stop-color="#FFD700" />
+              <stop offset="100%" stop-color="#D9A52E" />
+            </linearGradient>
+          </defs>
+          <!-- Base Inactive Path -->
+          <path class="xoom-track-base" id="xoomTrackBase" d="" />
+          <!-- Animated Glowing Progress Path -->
+          <path class="xoom-track-active" id="xoomTrackActive" d="" filter="url(#xoomNeonGlow)" />
+          <!-- Leading Glowing Beacon -->
+          <circle class="xoom-track-beacon" id="xoomTrackBeacon" r="6" />
+        </svg>
+
+        <!-- 2-Column Zigzag Rows -->
+        <div class="xoom-rows-container">
+          <!-- Row 1: Step 01 (Left) -->
+          <div class="row xoom-row align-items-center" data-step-row="1">
+            <div class="col-lg-6 xoom-col-card">
+              <div class="xoom-card" id="xoomCard1" data-step="1">
+                <div class="xoom-card-header">
+                  <div class="xoom-node-wrap">
+                    <div class="xoom-node" id="xoomNode1">
+                      <div class="xoom-node-pulse"></div>
+                      <span class="xoom-node-num">01</span>
+                    </div>
+                  </div>
+                  <div class="xoom-icon-box">
+                    <i class="bi bi-file-earmark-check"></i>
+                  </div>
+                  <span class="xoom-step-badge">Phase 01</span>
+                </div>
+                <h4 class="xoom-card-title">1. Demand Letter</h4>
+                <p class="xoom-card-desc">
+                  Employer provides attested Demand Letter, Power of Attorney &amp; Employment Contract as per Nepal Government regulations.
+                </p>
+                <div class="xoom-card-glow-bar"></div>
               </div>
-              <h5>1. Demand Letter</h5>
-              <p>Employer provides attested Demand Letter, Power of Attorney &amp; Employment Contract as per Nepal Government regulations.</p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block xoom-col-empty">
+              <!-- Intentional whitespace for zigzag path -->
             </div>
           </div>
 
-          <!-- Step 2 -->
-          <div class="col-lg col-md-6">
-            <div class="process-step-item">
-              <div class="process-badge">
-                <span class="process-step-num">02</span>
-                <i class="bi bi-search fs-6 text-gold"></i>
+          <!-- Row 2: Step 02 (Right) -->
+          <div class="row xoom-row align-items-center" data-step-row="2">
+            <div class="col-lg-6 d-none d-lg-block xoom-col-empty">
+              <!-- Intentional whitespace for zigzag path -->
+            </div>
+            <div class="col-lg-6 xoom-col-card">
+              <div class="xoom-card" id="xoomCard2" data-step="2">
+                <div class="xoom-card-header">
+                  <div class="xoom-node-wrap">
+                    <div class="xoom-node" id="xoomNode2">
+                      <div class="xoom-node-pulse"></div>
+                      <span class="xoom-node-num">02</span>
+                    </div>
+                  </div>
+                  <div class="xoom-icon-box">
+                    <i class="bi bi-search"></i>
+                  </div>
+                  <span class="xoom-step-badge">Phase 02</span>
+                </div>
+                <h4 class="xoom-card-title">2. Candidate Sourcing</h4>
+                <p class="xoom-card-desc">
+                  Mobilizing candidates from our active database and targeted national media announcements across all seven provinces.
+                </p>
+                <div class="xoom-card-glow-bar"></div>
               </div>
-              <h5>2. Candidate Sourcing</h5>
-              <p>Mobilizing candidates from our active database and targeted national media announcements across all seven provinces.</p>
             </div>
           </div>
 
-          <!-- Step 3 -->
-          <div class="col-lg col-md-6">
-            <div class="process-step-item">
-              <div class="process-badge" style="background: var(--secondary-royal); border-color: var(--accent-gold);">
-                <span class="process-step-num">03</span>
-                <i class="bi bi-person-check fs-6 text-gold"></i>
+          <!-- Row 3: Step 03 (Left) -->
+          <div class="row xoom-row align-items-center" data-step-row="3">
+            <div class="col-lg-6 xoom-col-card">
+              <div class="xoom-card" id="xoomCard3" data-step="3">
+                <div class="xoom-card-header">
+                  <div class="xoom-node-wrap">
+                    <div class="xoom-node" id="xoomNode3">
+                      <div class="xoom-node-pulse"></div>
+                      <span class="xoom-node-num">03</span>
+                    </div>
+                  </div>
+                  <div class="xoom-icon-box">
+                    <i class="bi bi-person-check"></i>
+                  </div>
+                  <span class="xoom-step-badge">Phase 03</span>
+                </div>
+                <h4 class="xoom-card-title">3. Interview &amp; Selection</h4>
+                <p class="xoom-card-desc">
+                  Rigorous technical trade tests and face-to-face or video interviews conducted directly by employer representatives.
+                </p>
+                <div class="xoom-card-glow-bar"></div>
               </div>
-              <h5>3. Interview &amp; Selection</h5>
-              <p>Rigorous technical trade tests and face-to-face or video interviews conducted directly by employer representatives.</p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block xoom-col-empty">
+              <!-- Intentional whitespace for zigzag path -->
             </div>
           </div>
 
-          <!-- Step 4 -->
-          <div class="col-lg col-md-6">
-            <div class="process-step-item">
-              <div class="process-badge">
-                <span class="process-step-num">04</span>
-                <i class="bi bi-passport fs-6 text-gold"></i>
+          <!-- Row 4: Step 04 (Right) -->
+          <div class="row xoom-row align-items-center" data-step-row="4">
+            <div class="col-lg-6 d-none d-lg-block xoom-col-empty">
+              <!-- Intentional whitespace for zigzag path -->
+            </div>
+            <div class="col-lg-6 xoom-col-card">
+              <div class="xoom-card" id="xoomCard4" data-step="4">
+                <div class="xoom-card-header">
+                  <div class="xoom-node-wrap">
+                    <div class="xoom-node" id="xoomNode4">
+                      <div class="xoom-node-pulse"></div>
+                      <span class="xoom-node-num">04</span>
+                    </div>
+                  </div>
+                  <div class="xoom-icon-box">
+                    <i class="bi bi-passport"></i>
+                  </div>
+                  <span class="xoom-step-badge">Phase 04</span>
+                </div>
+                <h4 class="xoom-card-title">4. Visa &amp; Processing</h4>
+                <p class="xoom-card-desc">
+                  GAMCA-approved medical tests, embassy visa stamping, and Government Labor Permit certification.
+                </p>
+                <div class="xoom-card-glow-bar"></div>
               </div>
-              <h5>4. Visa &amp; Processing</h5>
-              <p>GAMCA-approved medical tests, embassy visa stamping, and Government Labor Permit certification.</p>
             </div>
           </div>
 
-          <!-- Step 5 -->
-          <div class="col-lg col-md-6">
-            <div class="process-step-item">
-              <div class="process-badge">
-                <span class="process-step-num">05</span>
-                <i class="bi bi-send-check fs-6 text-gold"></i>
+          <!-- Row 5: Step 05 (Left) -->
+          <div class="row xoom-row align-items-center" data-step-row="5">
+            <div class="col-lg-6 xoom-col-card">
+              <div class="xoom-card" id="xoomCard5" data-step="5">
+                <div class="xoom-card-header">
+                  <div class="xoom-node-wrap">
+                    <div class="xoom-node" id="xoomNode5">
+                      <div class="xoom-node-pulse"></div>
+                      <span class="xoom-node-num">05</span>
+                    </div>
+                  </div>
+                  <div class="xoom-icon-box">
+                    <i class="bi bi-send-check"></i>
+                  </div>
+                  <span class="xoom-step-badge">Phase 05</span>
+                </div>
+                <h4 class="xoom-card-title">5. Final Deployment</h4>
+                <p class="xoom-card-desc">
+                  Pre-departure orientation, flight ticket booking, airport briefing, and departure dispatch to destination employer.
+                </p>
+                <div class="xoom-card-glow-bar"></div>
               </div>
-              <h5>5. Final Deployment</h5>
-              <p>Pre-departure orientation, flight ticket booking, airport briefing, and departure dispatch to destination employer.</p>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block xoom-col-empty">
+              <!-- Intentional whitespace for zigzag path -->
             </div>
           </div>
         </div>
@@ -1448,6 +1559,11 @@
 
   <!-- Custom Scripts -->
   <script src="js/jobs.js"></script>
+  <!-- GSAP & Lenis Motion Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/motion.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
