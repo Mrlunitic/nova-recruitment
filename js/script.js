@@ -85,6 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // HTML escaping helper to prevent XSS
+  const escapeHtml = (str) => {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  };
+
   // 6. Contact Us Form Client-Side Validation & Static Handling
   const contactForm = document.getElementById("novaContactForm");
   const contactFeedback = document.getElementById("contactFormFeedback");
@@ -114,19 +124,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Static feedback success message with WhatsApp / Mailto fallbacks
       const whatsappText = `Hello NOVA Recruitment Pvt. Ltd.,%0A%0AMy name is ${encodeURIComponent(fullName)}.%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email || "N/A")}%0ASubject: ${encodeURIComponent(subject)}%0A%0AMessage:%0A${encodeURIComponent(message)}`;
-      const whatsappUrl = `https://wa.me/9779851122545?text=${whatsappText}`;
+      const waKathmandu = `https://wa.me/9779851122545?text=${whatsappText}`;
+      const waQatar = `https://wa.me/97477059127?text=${whatsappText}`;
+      const waGreece = `https://wa.me/306998664901?text=${whatsappText}`;
+
+      const safeName = escapeHtml(fullName);
 
       if (contactFeedback) {
         contactFeedback.innerHTML = `
           <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <h5 class="alert-heading mb-2"><i class="bi bi-check-circle-fill me-2"></i> Inquiry Received!</h5>
-            <p class="mb-2">Thank you, <strong>${fullName}</strong>. Since this is a static website, we recommend connecting directly via WhatsApp or Telephone for immediate assistance.</p>
+            <h5 class="alert-heading mb-2"><i class="bi bi-check-circle-fill me-2"></i> Inquiry Prepared!</h5>
+            <p class="mb-2">Thank you, <strong>${safeName}</strong>. Select your preferred branch desk below to connect immediately:</p>
             <div class="d-flex flex-wrap gap-2 mt-3">
-              <a href="${whatsappUrl}" target="_blank" rel="noopener" class="btn btn-sm btn-success">
-                <i class="bi bi-whatsapp"></i> Send via WhatsApp
+              <a href="${waKathmandu}" target="_blank" rel="noopener" class="btn btn-sm btn-success">
+                <i class="bi bi-whatsapp"></i> WhatsApp Kathmandu HQ
               </a>
-              <a href="tel:+9779851122545" class="btn btn-sm btn-primary">
-                <i class="bi bi-telephone-fill"></i> Call 9851122545
+              <a href="${waQatar}" target="_blank" rel="noopener" class="btn btn-sm btn-success">
+                <i class="bi bi-whatsapp"></i> WhatsApp Qatar Desk
+              </a>
+              <a href="${waGreece}" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                <i class="bi bi-whatsapp"></i> WhatsApp Greece Desk
+              </a>
+              <a href="tel:+9779851122545" class="btn btn-sm btn-outline-dark">
+                <i class="bi bi-telephone-fill"></i> Call HQ (+977 9851122545)
               </a>
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
@@ -169,19 +189,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const msg = `Hello NOVA Recruitment Pvt. Ltd.,%0A%0A*MANPOWER DEMAND INQUIRY*%0ACompany: ${encodeURIComponent(company)}%0AContact Person: ${encodeURIComponent(contactPerson)}%0ACountry: ${encodeURIComponent(country)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0ACategory: ${encodeURIComponent(category)}%0ARequired Workforce: ${encodeURIComponent(count || "Flexible")}%0ADetails: ${encodeURIComponent(details || "Inquiry regarding demand letter and recruitment process.")}`;
-      const waUrl = `https://wa.me/9779851122545?text=${msg}`;
+      const waKathmandu = `https://wa.me/9779851122545?text=${msg}`;
+      const waQatar = `https://wa.me/97477059127?text=${msg}`;
+      const waGreece = `https://wa.me/306998664901?text=${msg}`;
+
+      const safeCompany = escapeHtml(company);
 
       if (employerFeedback) {
         employerFeedback.innerHTML = `
           <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <h5 class="alert-heading mb-2"><i class="bi bi-check-circle-fill me-2"></i> Demand Inquiry Logged</h5>
-            <p class="mb-2">Thank you, <strong>${company}</strong>. Our International Recruitment Desk will review your manpower requirements.</p>
-            <div class="mt-3">
-              <a href="${waUrl}" target="_blank" rel="noopener" class="btn btn-sm btn-gold-nova">
-                <i class="bi bi-whatsapp"></i> Dispatch Demand via WhatsApp
+            <h5 class="alert-heading mb-2"><i class="bi bi-check-circle-fill me-2"></i> Demand Inquiry Prepared</h5>
+            <p class="mb-2">Thank you, <strong>${safeCompany}</strong>. Dispatch your demand specification to any of our dedicated offices:</p>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <a href="${waKathmandu}" target="_blank" rel="noopener" class="btn btn-sm btn-gold-nova">
+                <i class="bi bi-whatsapp"></i> Send to Kathmandu HQ
               </a>
-              <a href="mailto:info@novarecruitment.com.np?subject=Manpower%20Demand%20Inquiry%20-%20${encodeURIComponent(company)}" class="btn btn-sm btn-outline-dark ms-2">
-                <i class="bi bi-envelope"></i> Send Email
+              <a href="${waQatar}" target="_blank" rel="noopener" class="btn btn-sm btn-success">
+                <i class="bi bi-whatsapp"></i> Send to Qatar Desk
+              </a>
+              <a href="${waGreece}" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                <i class="bi bi-whatsapp"></i> Send to Greece Desk
+              </a>
+              <a href="mailto:info@novarecruitment.com.np?subject=Manpower%20Demand%20Inquiry%20-%20${encodeURIComponent(company)}" class="btn btn-sm btn-outline-dark">
+                <i class="bi bi-envelope"></i> Email Us
               </a>
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
